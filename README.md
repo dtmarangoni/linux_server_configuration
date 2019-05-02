@@ -10,7 +10,7 @@ and updates, firewalls, SSH, user management, timezone setting, PostgreSQL,
 Apache Web Server and Let's Encrypt with certbot for HTTPS enabling.
 
 
-## Specific configuration for Udacity project
+## Specific Configuration for Udacity project
 For Udacity project evaluation the following configuration was used:
 - Amazon Lightsail Ubuntu 18.04 server image;
 - Linux user: grader;
@@ -120,11 +120,15 @@ Now change the authorized_keys and it's folder permissions:
 - `chmod 700 .ssh`;
 - `chmod 644 .ssh/authorized_keys`.
 
-And then turn off user and password login method again:
+For security reasons, turn off user and password login method again:
 - `sudo nano /etc/ssh/sshd_config`.
 - Where you find **_# To disable tunneled clear text passwords, change to no 
-here!_**, set: 
-    `PasswordAuthentication no`.
+here!_**, set:
+    - `PasswordAuthentication no`.
+
+Also disable root login:
+- Where you find **_#PermitRootLogin prohibit-password_**, set:
+    - `PermitRootLogin no`.
 
 Restart the ssh service:
 - `sudo service ssh restart`.
@@ -141,7 +145,14 @@ First check if date is already synced with UTC:
     - `sudo timedatectl set-ntp on`.
 - Check it now: `timedatectl`.
 
-Before continuing to project installation, if Ubuntu is asking, perform a system restart:
+#### 2.5 - Packages Upgrade and System Restart
+Before continuing to project installation, if there's still 
+packages pending
+ of upgrade, do:
+- `sudo apt-get update`;
+- `sudo apt-get dist-upgrade`.
+
+If a system restart is needed, do:
 - `sudo reboot`.
 
 ### 3 - Clone the Item Catalog Project
