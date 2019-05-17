@@ -11,6 +11,8 @@ Apache Web Server and Let's Encrypt with certbot for HTTPS enabling.
 
 
 ## Specific Configuration for Udacity project
+(**As the course ended the server has been shutting down**).
+
 For Udacity project evaluation the following configuration was used:
 - Amazon Lightsail Ubuntu 18.04 server image;
 - Linux user: grader;
