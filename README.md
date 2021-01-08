@@ -1,6 +1,6 @@
 # Linux Server Configuration
 
-A step by step on how to configure an Amazon Lightsail Ubuntu linux instance
+A step by step on how to configure an Amazon Lightsail Ubuntu Linux instance
  to deploy the web application [Item Catalog](https://github.com/dtmarangoni/item_catalog).
  
 Apache web server was chosen to serve the application.
